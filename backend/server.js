@@ -6,7 +6,7 @@ app.get('/',(req,res)=>{
     res.send('Server is ready')
 })
 
-app.get('/api/product',(req,res)=>{
+app.get('/api/products',(req,res)=>{
     res.send(data)
 })
 
