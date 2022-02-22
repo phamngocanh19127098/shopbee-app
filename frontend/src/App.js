@@ -34,6 +34,7 @@ function App() {
       <Route path='/' element = {<HomeScreen/>} exact/>
       <Route path='/cart/:id/:qty' element={<CartScreen/>}/>
       <Route path='/product/:id' element = {<ProductScreen/>}/>
+      <Route path="/cart" element={<CartScreen />}></Route>
       </Routes>
       </main>
       <footer className="row center">All right reserved</footer>
