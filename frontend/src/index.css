@@ -165,9 +165,6 @@ img.medium {
   color: #a02020;
 }
 
-.danger {
-  color: #a02020;
-}
 .alert {
   padding: 1rem;
   border: 0.1rem solid transparent;
@@ -177,6 +174,7 @@ img.medium {
   color: #2020a0;
   background-color: #e0e0ff;
 }
+
 .alert-danger {
   color: #a02020;
   background-color: #ffe0e0;
