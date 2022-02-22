@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect} from 'react';
 
 import Product from '../components/Product';
-import data from '../data';
+
 import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,7 +21,7 @@ export default function HomeScreen() {
       {loading? (<LoadingBox></LoadingBox>)
       :error ? (<MessageBox variant = 'danger'>{error}</MessageBox>)
       : (<div className="row center">
-      {data.products.map((product) => (
+      {products.map((product) => (
         <Product key={product._id} product={product}></Product>
       ))}
     </div>)}

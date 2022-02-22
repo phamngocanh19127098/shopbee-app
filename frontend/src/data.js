@@ -61,7 +61,7 @@ const data = {
         description: 'high quality product',
       },
       {
-        _id: '6',
+          
         name: 'Adidas Fit Pant',
         category: 'Pants',
         image: '/images/p6.jpg',
