@@ -3,7 +3,10 @@ import express from "express";
 import mongoose from "mongoose";
 import userRouter from "./routers/userRouter.js";
 import productRouter from "./routers/producRouter.js";
+import dotenv from 'dotenv'
+dotenv.config();
 const app = express();
+app.use(express.json());
 mongoose.connect('mongodb://localhost/amazona',{
     useNewUrlParser: true,
   useUnifiedTopology: true,
