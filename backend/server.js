@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import userRouter from "./routers/userRouter.js";
 import productRouter from "./routers/producRouter.js";
 import dotenv from 'dotenv'
+import orderRouter from "./routers/orderRouter.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -21,6 +22,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/users',userRouter)
 app.use('/api/products',productRouter);
+app.use('/api/orders',orderRouter);
 app.use((error,req,res,next)=>{
     res.status(500).send({message: error.message});
     next();
