@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams} from 'react-router-dom'
 import { addToCart ,removeFromCart} from '../actions/cartActions';
 import MessageBox from '../components/MessageBox';
+import { useNavigate } from 'react-router-dom';
 export default function CartScreen(props) {
     const params = useParams();
     const productId = params.id;  
@@ -10,6 +11,7 @@ export default function CartScreen(props) {
     const cart = useSelector((state)=>state.cart);
     const {cartItems} = cart;
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     useEffect(()=>{
       if(productId){
         dispatch(addToCart(productId,qty))
@@ -21,7 +23,7 @@ export default function CartScreen(props) {
       dispatch(removeFromCart(id))
     };
     const checkoutHandler = () => {
-      props.history.push('/signin?redirect=shipping');
+      navigate('/signin?redirect=shipping');
     };
     
   return (
