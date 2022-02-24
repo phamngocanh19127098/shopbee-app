@@ -186,7 +186,10 @@ img.small {
 .error {
   color: #a02020;
 }
-
+/*Alert*/
+.loading {
+  display: block !important;
+}
 .alert {
   padding: 1rem;
   border: 0.1rem solid transparent;
