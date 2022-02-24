@@ -10,11 +10,20 @@ export default function RegisterScreen(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+  const navigate = useNavigate();
   const location = useLocation();
   const redirect = location.search
+  
     ? location.search.split('=')[1]
     : '/';  
+    const userSignin = useSelector((state) => state.userSignin);
+   
+    console.log(userSignin.userInfo);
+    useEffect(() => {
+      if (userSignin.userInfo) {       
+        navigate('/'); 
+      }
+    }, [navigate, userSignin.userInfo]);
   
   const userRegister = useSelector((state) => state.userRegister);
   const { userInfo, loading, error } = userRegister;
@@ -28,12 +37,15 @@ export default function RegisterScreen(props) {
       dispatch(register(name, email, password));
     }
   };
-  const navigate = useNavigate();
+  
   useEffect(() => {
     if (userInfo) {
-      navigate(redirect);
+      
+      navigate(redirect); 
     }
   }, [navigate, redirect, userInfo]);
+
+  
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
