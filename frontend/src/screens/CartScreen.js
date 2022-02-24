@@ -23,7 +23,7 @@ export default function CartScreen(props) {
       dispatch(removeFromCart(id))
     };
     const checkoutHandler = () => {
-      navigate('/signin?redirect=shipping');
+      navigate('/shipping');
     };
     
   return (
