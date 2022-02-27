@@ -1,4 +1,22 @@
 const data = {
+    categories:[
+      {
+        Baby:'Baby',
+        Beverages:'Beverages',
+        Beer: 'Beer, Wine & Spirits',
+        Bread:'Bread & Bakery',
+        CannedGoods:'Canned Goods & Soups',
+        Condiments:'Condiments/Spices & Bake',
+        Cookies:'Cookies, Snacks & Candy',
+        Dairy: 'Dairy, Eggs & Cheese',
+        FrozenFoods : 'Frozen Foods',
+        Produce: 'Fruits & Vegetables',
+        Tobacco: 'Tobacco',
+        PaperProducts: 'Paper Products',
+        CleaningSupplies : 'Cleaning Supplies',
+      }
+
+    ],
     products: [
       {
         _id: '1',

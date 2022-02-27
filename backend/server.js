@@ -8,7 +8,7 @@ import orderRouter from "./routers/orderRouter.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
-mongoose.connect('mongodb://localhost/amazona',{
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/amazona',{
     useNewUrlParser: true,
   useUnifiedTopology: true,
   
@@ -27,7 +27,8 @@ app.use((error,req,res,next)=>{
     res.status(500).send({message: error.message});
     next();
 })
-app.listen(5000,()=>{
+const PORT = process.env.PORT||5000;
+app.listen(PORT,()=>{
     console.log('Sever is running at port 5000 ');
 })
 

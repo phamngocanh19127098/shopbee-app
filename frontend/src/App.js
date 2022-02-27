@@ -30,6 +30,7 @@ function App() {
     <div className="grid-container">
       <header className="row">
         <div>
+          
           <Link className="brand" to="/">
             amazona
           </Link>
