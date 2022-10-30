@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt'
 import { generateToken, isAuth } from "../utils.js";
 const userRouter = express.Router();
 userRouter.get('/seed',   expressAsyncHandler(async(req,res)=>{
-    //await User.remove({});
+    // await User.remove({});
     const createdUsers = await User.insertMany(data.users);
     res.send({createdUsers});
 }));
@@ -67,4 +67,14 @@ userRouter.post(
       }
     })
   );
+
+  userRouter.get('/:id', expressAsyncHandler( async(req, res) => {
+    let id = req.params.id;
+    let user = await User.findById(id);
+    console.log(user);
+    return res.status(200).json({
+      message: "OK",
+      data : user
+    })
+  }))
 export default userRouter;

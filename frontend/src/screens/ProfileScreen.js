@@ -62,7 +62,7 @@ export default function ProfileScreen() {
                 id="name"
                 type="text"
                 placeholder="Enter name"
-                value={name}
+                value={userSignin.userInfo.name}
                 onChange= {(e)=>{setName(e.target.value)
 
                 }}
@@ -76,8 +76,8 @@ export default function ProfileScreen() {
                 id="email"
                 type="email"
                 placeholder="Enter email"
-                
-               
+                value={userSignin.userInfo.email}
+                onChange = {(e) => {setEmail(e.target.value)}}
               >
                 
               </input>
@@ -88,7 +88,8 @@ export default function ProfileScreen() {
                 id="password"
                 type="password"
                 placeholder="Enter password"
-                
+                value={"secret"}
+                onChange = {(e) => {setPassword(e.target.value)}}
               ></input>
             </div>
             <div>
