@@ -8,11 +8,26 @@ import orderRouter from "./routers/orderRouter.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
-mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/amazona',{
+
+const URL = `mongodb://mongodb_service:27017?retryWrites=false`
+
+const connectionOption = {
     useNewUrlParser: true,
-  useUnifiedTopology: true,
-  
-})
+    useUnifiedTopology: true,
+    // useFindAndModify: false
+}
+connectionOption['auth'] = {
+    authSource: 'admin'
+}
+connectionOption['user'] = 'root'
+    connectionOption['pass'] = 'example'
+mongoose.connect(URL, connectionOption)
+    .then((result) => console.log("Connected to mongodb at: " + URL))
+    .catch(
+        (err) => {
+            console.log(err);
+            console.error("Cannot connect to db");
+        });
 
 
 app.get('/',(req,res)=>{
